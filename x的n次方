@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+// 求x的n次方  时间复杂度为O(logn)
+int function(int x, int n) {
+    if (n == 0) return 1;
+    int t = function(x, n / 2);  // 对半
+    if (n % 2 == 1) return t * t * x;  
+    return t * t;
+}
+int main()
+{
+    int res = 1;
+    res = function(2, 5);
+    cout << res << endl;
+    return 0;
+}
